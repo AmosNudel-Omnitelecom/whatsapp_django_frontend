@@ -1,0 +1,324 @@
+/* Clean & Modern Embedded Signup Styling */
+
+.embedded-signup-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.embedded-signup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+}
+
+.embedded-signup-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.phone-numbers-section {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.phone-numbers-section h2 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.phone-numbers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+.phone-number-item {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.phone-number-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-color: #ccc;
+  background: #ffffff;
+}
+
+.phone-number-info {
+  margin-bottom: 1rem;
+}
+
+.phone-number-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.phone-number-id {
+  font-size: 0.8rem;
+  color: #666;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  background: #f8f9fa;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+  border: 1px solid #eee;
+  margin-top: 0.5rem;
+}
+
+.select-phone-button {
+  background: #888;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.select-phone-button:hover {
+  background: #666;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.select-phone-button.selected {
+  background: #4caf50;
+  color: white;
+}
+
+.select-phone-button.selected:hover {
+  background: #45a049;
+}
+
+.selected-phone-display {
+  background: #e8f5e8;
+  border: 1px solid #4caf50;
+  color: #2e7d32;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selected-phone-display strong {
+  color: #1b5e20;
+}
+
+.launch-button {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.launch-button:hover:not(:disabled) {
+  background: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.launch-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.response-display {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.response-display h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.response-content {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.response-content strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.response-content pre {
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #333;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  overflow-x: auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+}
+
+.error {
+  background: #ffffff;
+  border: 1px solid #e53935;
+  color: #e53935;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.retry-button {
+  background: #888;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 0.75rem;
+}
+
+.retry-button:hover {
+  background: #666;
+  transform: translateY(-1px);
+}
+
+.no-phone-numbers {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+  font-size: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+}
+
+.no-phone-numbers p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .embedded-signup-container {
+    padding: 1rem;
+  }
+  
+  .embedded-signup-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .embedded-signup-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .phone-numbers-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .phone-number-item {
+    padding: 1rem;
+  }
+  
+  .launch-button {
+    max-width: 100%;
+  }
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
