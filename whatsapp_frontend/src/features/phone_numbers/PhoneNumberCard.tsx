@@ -59,10 +59,9 @@ const PhoneNumberCard: React.FC<Props> = ({ phoneNumber }) => {
           </p>
         )}
       </div>
-
-      {showVerificationInput && (
+        <div>
         <VerificationSection numberId={phoneNumber.id} onSuccess={() => setShowVerificationInput(false)} />
-      )}
+        </div>
 
       <div className="phone-number-actions">
         <button

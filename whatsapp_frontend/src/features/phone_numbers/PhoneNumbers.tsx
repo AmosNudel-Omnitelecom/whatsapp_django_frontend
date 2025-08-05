@@ -2,6 +2,7 @@ import React from 'react';
 import { useGetPhoneNumbersQuery } from './phoneNumbersApi';
 import PhoneNumberCard from './PhoneNumberCard';
 import './PhoneNumbersStyleing.css';
+import AddPhoneNumber from './AddPhoneNumber';
 
 const PhoneNumbers: React.FC = () => {
   const { data, error, isLoading, refetch } = useGetPhoneNumbersQuery();
@@ -33,7 +34,7 @@ const PhoneNumbers: React.FC = () => {
         <h2>Phone Numbers</h2>
         <button onClick={() => refetch()} className="refresh-button">Refresh</button>
       </div>
-
+      <AddPhoneNumber />
       {data?.data && data.data.length > 0 ? (
         <div className="phone-numbers-list">
           {data.data.map(phoneNumber => (
