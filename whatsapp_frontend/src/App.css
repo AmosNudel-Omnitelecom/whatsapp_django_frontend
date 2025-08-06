@@ -1,22 +1,22 @@
 .App {
   text-align: center;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #eed9b3;
+  background: #fdf6f2;
   min-height: 100vh;
 }
 
 /* App Header Styling */
 .app-header {
-  background: #ebe5d4;
+  background: #94d4e4;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid #e0cc94;
+  border-bottom: 1px solid #4cc07a;
   margin-bottom: 2rem;
 }
 
 .app-header h1 {
   margin: 0;
-  color: #333;
+  color: #170b03;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -26,8 +26,8 @@
 .app-tabs {
   display: flex;
   justify-content: center;
-  background: #ebe5d4;
-  border: 1px solid #e0cc94;
+  background: #94d4e4;
+  border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 0.5rem;
   margin: 0 auto 2rem auto;
@@ -45,26 +45,26 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  color: #666;
+  color: #170b03;
   transition: all 0.2s ease;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .app-tab-button:hover {
-  background: #ebe5d4;
-  color: #333;
+  background: #70da9a;
+  color: #170b03;
 }
 
 .app-tab-button.active {
-  background: #e0cc94;
-  color: #333;
+  background: #4cc07a;
+  color: #170b03;
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .app-tab-button.active:hover {
-  background: #bbaa7b;
-  color: #333;
+  background: #43a86a;
+  color: #170b03;
 }
 
 .app-content {
@@ -85,18 +85,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fdf6f2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #333;
+  color: #170b03;
 }
 
 .App-link {
-  color: #333;
+  color: #170b03;
 }
 
 @keyframes App-logo-spin {

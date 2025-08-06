@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #f5f5f5;
+  background: #fdf6f2;
   min-height: 100vh;
 }
 
@@ -15,15 +15,15 @@
   align-items: center;
   margin-bottom: 2.5rem;
   padding: 1.5rem 2rem;
-  background: #ffffff;
+  background: #94d4e4;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #ddd;
+  border: 1px solid #4cc07a;
 }
 
 .embedded-signup-header h2 {
   margin: 0;
-  color: #333;
+  color: #170b03;
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -31,7 +31,7 @@
 
 .phone-numbers-section {
   background: #ffffff;
-  border: 1px solid #ddd;
+  border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -40,7 +40,7 @@
 
 .phone-numbers-section h2 {
   margin: 0 0 1.5rem 0;
-  color: #333;
+  color: #170b03;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -53,8 +53,8 @@
 }
 
 .phone-number-item {
-  background: #f8f9fa;
-  border: 1px solid #eee;
+  background: #94d4e4;
+  border: 1px solid #4cc07a;
   border-radius: 8px;
   padding: 1.25rem;
   transition: all 0.3s ease;
@@ -64,8 +64,8 @@
 .phone-number-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  border-color: #ccc;
-  background: #ffffff;
+  border-color: #70da9a;
+  background: #94d4e4;
 }
 
 .phone-number-info {
@@ -75,24 +75,24 @@
 .phone-number-info p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
-  color: #666;
+  color: #170b03;
   font-weight: 500;
 }
 
 .phone-number-id {
   font-size: 0.8rem;
-  color: #666;
+  color: #170b03;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   background: #f8f9fa;
   padding: 0.375rem 0.75rem;
   border-radius: 6px;
   display: inline-block;
-  border: 1px solid #eee;
+  border: 1px solid #4cc07a;
   margin-top: 0.5rem;
 }
 
 .select-phone-button {
-  background: #888;
+  background: #4cc07a;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -106,24 +106,24 @@
 }
 
 .select-phone-button:hover {
-  background: #666;
+  background: #43a86a;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .select-phone-button.selected {
-  background: #4caf50;
+  background: #70da9a;
   color: white;
 }
 
 .select-phone-button.selected:hover {
-  background: #45a049;
+  background: #5fc88a;
 }
 
 .selected-phone-display {
-  background: #e8f5e8;
-  border: 1px solid #4caf50;
-  color: #2e7d32;
+  background: #94d4e4;
+  border: 1px solid #4cc07a;
+  color: #170b03;
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem 0;
@@ -134,11 +134,11 @@
 }
 
 .selected-phone-display strong {
-  color: #1b5e20;
+  color: #170b03;
 }
 
 .launch-button {
-  background: #1877f2;
+  background: #4cc07a;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -154,7 +154,7 @@
 }
 
 .launch-button:hover:not(:disabled) {
-  background: #166fe5;
+  background: #43a86a;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
@@ -169,7 +169,7 @@
 
 .response-display {
   background: #ffffff;
-  border: 1px solid #ddd;
+  border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -178,15 +178,15 @@
 
 .response-display h3 {
   margin: 0 0 1rem 0;
-  color: #333;
+  color: #170b03;
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .response-content {
-  background: #f8f9fa;
-  border: 1px solid #eee;
+  background: #94d4e4;
+  border: 1px solid #4cc07a;
   border-radius: 8px;
   padding: 1rem;
 }
@@ -194,7 +194,7 @@
 .response-content strong {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #170b03;
   font-weight: 600;
 }
 
@@ -203,25 +203,25 @@
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   font-size: 0.85rem;
   line-height: 1.4;
-  color: #333;
+  color: #170b03;
   white-space: pre-wrap;
   word-break: break-word;
   background: #ffffff;
   padding: 1rem;
   border-radius: 6px;
-  border: 1px solid #eee;
+  border: 1px solid #4cc07a;
   overflow-x: auto;
 }
 
 .loading {
   text-align: center;
   padding: 3rem;
-  color: #666;
+  color: #170b03;
   font-size: 1rem;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #ddd;
+  border: 1px solid #4cc07a;
 }
 
 .error {
@@ -235,7 +235,7 @@
 }
 
 .retry-button {
-  background: #888;
+  background: #4cc07a;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -248,19 +248,19 @@
 }
 
 .retry-button:hover {
-  background: #666;
+  background: #43a86a;
   transform: translateY(-1px);
 }
 
 .no-phone-numbers {
   text-align: center;
   padding: 3rem 2rem;
-  color: #666;
+  color: #170b03;
   font-size: 1rem;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #ddd;
+  border: 1px solid #4cc07a;
 }
 
 .no-phone-numbers p {
@@ -310,15 +310,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: #fdf6f2;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ddd;
+  background: #4cc07a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccc;
+  background: #43a86a;
 }
