@@ -46,15 +46,11 @@ function RegisterNumber({ phoneNumberId, displayPhoneNumber, status }: RegisterN
   };
 
   return (
-    <div>
+    <div className="register-number-container">
       <button 
+        className="register-button"
         onClick={() => setShowPinInput(!showPinInput)}
         disabled={isRegistering || !isRegistrationAllowed || isStatusLoading}
-        style={{ 
-          marginRight: '8px',
-          opacity: isRegistrationAllowed ? 1 : 0.5,
-          cursor: isRegistrationAllowed ? 'pointer' : 'not-allowed'
-        }}
         title={
           isStatusLoading 
             ? 'Loading status...' 
@@ -67,26 +63,27 @@ function RegisterNumber({ phoneNumberId, displayPhoneNumber, status }: RegisterN
       </button>
       
       {showPinInput && (
-        <div style={{ marginTop: '8px' }}>
-          <div style={{ marginBottom: '8px' }}>
+        <div className="pin-input-section">
+          <div>
             Registering: {displayPhoneNumber}
           </div>
           <input
             type="text"
+            className="pin-input"
             placeholder="Enter 6-digit PIN"
             value={pin}
             onChange={handlePinChange}
             maxLength={6}
-            style={{ marginRight: '8px', width: '120px' }}
           />
           <button 
+            className="submit-pin-button"
             onClick={handleRegister}
             disabled={isRegistering || pin.length !== 6}
-            style={{ marginRight: '8px' }}
           >
             {isRegistering ? 'Registering...' : 'Submit'}
           </button>
           <button 
+            className="cancel-pin-button"
             onClick={() => {
               setShowPinInput(false);
               setPin('');
