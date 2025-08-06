@@ -16,6 +16,16 @@ function EmbeddedSignup() {
   const handlePhoneNumberSelect = (id: string) => {
     setSelectedPhoneNumberId(id);
     console.log('Phone number selected in EmbeddedSignup:', id);
+    
+    // Display the configuration being used when phone number is selected
+    // if (appId && configId) {
+    //   displayResponse('Configuration Used', {
+    //     appId: appId,
+    //     configId: configId,
+    //     selectedPhoneNumberId: id,
+    //     timestamp: new Date().toISOString()
+    //   });
+    // }
   };
 
   // Display response function
@@ -60,26 +70,11 @@ function EmbeddedSignup() {
         return;
       }
 
-      // Display the configuration being used
-      displayResponse('Configuration Used', {
-        appId: appId,
-        configId: configId,
-        selectedPhoneNumberId: selectedPhoneNumberId,
-        timestamp: new Date().toISOString()
-      });
-
       // Check if FB is available
       if (typeof (window as any).FB === 'undefined') {
         displayResponse('Error', { message: 'Facebook SDK not loaded' });
         return;
       }
-
-      (window as any).FB.init({
-        appId: appId,
-        autoLogAppEvents: true,
-        xfbml: true,
-        version: 'v23.0'
-      });
       
       (window as any).FB.login(fbLoginCallback, {
         config_id: configId,
@@ -156,7 +151,7 @@ function EmbeddedSignup() {
   return (
     <div className="embedded-signup-container">
       <div className="embedded-signup-header">
-        <h2>WhatsApp Embedded Signup Configuration</h2>
+        <h2>WhatsApp Embedded Signup</h2>
       </div>
       
       <EmbeddedSignupNumbersList onPhoneNumberSelect={handlePhoneNumberSelect} />
