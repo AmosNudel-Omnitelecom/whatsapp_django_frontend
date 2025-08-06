@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { useGetPhoneNumbersQuery } from '../phone_numbers/phoneNumbersApi';
-import PhoneNumberCard from '../phone_numbers/PhoneNumberCard';
 import './EmbeddedSignupStyling.css';
 
 interface EmbeddedSignupNumbersListProps {
@@ -9,7 +8,36 @@ interface EmbeddedSignupNumbersListProps {
 
 function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumbersListProps) {
     const { data, error, isLoading, refetch } = useGetPhoneNumbersQuery();
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
 
+    // All hooks must be called before any early returns
+    const verifiedPhoneNumbers = data?.data?.filter((phoneNumber) => phoneNumber.code_verification_status === 'VERIFIED');
+    
+    const paginatedData = useMemo(() => {
+        if (!verifiedPhoneNumbers) return [];
+        
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        return verifiedPhoneNumbers.slice(startIndex, endIndex);
+    }, [verifiedPhoneNumbers, currentPage]);
+
+    const totalPages = useMemo(() => {
+        if (!verifiedPhoneNumbers) return 0;
+        return Math.ceil(verifiedPhoneNumbers.length / itemsPerPage);
+    }, [verifiedPhoneNumbers]);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const handleSelectPhoneNumber = (id: string) => {
+        console.log('Selected phone number ID:', id);
+        onPhoneNumberSelect(id);
+    }
+
+    // Early returns after all hooks are called
     if (isLoading) {
       return (
         <div className="phone-numbers-section">
@@ -31,13 +59,6 @@ function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumber
       );
     }
 
-    const handleSelectPhoneNumber = (id: string) => {
-        console.log('Selected phone number ID:', id);
-        onPhoneNumberSelect(id);
-    }
-
-    const verifiedPhoneNumbers = data?.data?.filter((phoneNumber) => phoneNumber.code_verification_status === 'VERIFIED');
-
     if (!verifiedPhoneNumbers || verifiedPhoneNumbers.length === 0) {
       return (
         <div className="phone-numbers-section">
@@ -53,7 +74,7 @@ function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumber
     <div className="phone-numbers-section">
         <h2>Phone Numbers</h2>
         <div className="phone-numbers-list">
-            {verifiedPhoneNumbers.map((phoneNumber) => (
+            {paginatedData.map((phoneNumber) => (
                 <div key={phoneNumber.id} className="phone-number-item">  
                     <div className="phone-number-info">
                         <p><strong>Phone Number:</strong> {phoneNumber.phone_number}</p>
@@ -67,6 +88,45 @@ function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumber
                     </button>
                 </div>
             ))}
+        </div>
+        
+        {totalPages > 1 && (
+            <div className="pagination">
+                <button 
+                    className="pagination-button"
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                >
+                    Previous
+                </button>
+                
+                <div className="pagination-numbers">
+                    {[...Array(totalPages)].map((_, index) => {
+                        const page = index + 1;
+                        return (
+                            <button
+                                key={page}
+                                className={`pagination-number ${currentPage === page ? 'active' : ''}`}
+                                onClick={() => handlePageChange(page)}
+                            >
+                                {page}
+                            </button>
+                        );
+                    })}
+                </div>
+                
+                <button 
+                    className="pagination-button"
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                >
+                    Next
+                </button>
+            </div>
+        )}
+        
+        <div className="pagination-info">
+            Showing {paginatedData.length} of {verifiedPhoneNumbers?.length || 0} verified phone numbers
         </div>
     </div>
   )

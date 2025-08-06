@@ -151,7 +151,6 @@ function EmbeddedSignup() {
   return (
     <div className="embedded-signup-container">
       <div className="embedded-signup-header">
-        <h2>WhatsApp Embedded Signup</h2>
       </div>
       
       <EmbeddedSignupNumbersList onPhoneNumberSelect={handlePhoneNumberSelect} />

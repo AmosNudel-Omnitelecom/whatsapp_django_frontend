@@ -9,7 +9,6 @@ function WabasList() {
   return (
     <div className="wabas-container">
         <div className="wabas-header">
-            <h1>Waba List</h1>
         </div>
         
         <div className="wabas-tabs">

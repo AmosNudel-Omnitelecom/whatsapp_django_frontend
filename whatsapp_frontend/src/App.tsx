@@ -11,27 +11,26 @@ function App() {
     <div className="App">
       <div className="app-header">
         <h1>WhatsApp Business API Dashboard</h1>
-      </div>
-      
-      <div className="app-tabs">
-        <button 
-          className={`app-tab-button ${activeTab === 'phone-numbers' ? 'active' : ''}`}
-          onClick={() => setActiveTab('phone-numbers')}
-        >
-          Phone Numbers
-        </button>
-        <button 
-          className={`app-tab-button ${activeTab === 'embedded-signup' ? 'active' : ''}`}
-          onClick={() => setActiveTab('embedded-signup')}
-        >
-          Embedded Signup
-        </button>
-        <button 
-          className={`app-tab-button ${activeTab === 'wabas' ? 'active' : ''}`}
-          onClick={() => setActiveTab('wabas')}
-        >
-          WABAs
-        </button>
+        <div className="app-tabs">
+          <button 
+            className={`app-tab-button ${activeTab === 'phone-numbers' ? 'active' : ''}`}
+            onClick={() => setActiveTab('phone-numbers')}
+          >
+            Phone Numbers
+          </button>
+          <button 
+            className={`app-tab-button ${activeTab === 'embedded-signup' ? 'active' : ''}`}
+            onClick={() => setActiveTab('embedded-signup')}
+          >
+            Embedded Signup
+          </button>
+          <button 
+            className={`app-tab-button ${activeTab === 'wabas' ? 'active' : ''}`}
+            onClick={() => setActiveTab('wabas')}
+          >
+            WABAs
+          </button>
+        </div>
       </div>
 
       <div className="app-content">

@@ -10,17 +10,7 @@
 }
 
 .embedded-signup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #94d4e4 0%, #bce4ea 50%, #a8dce8 100%);
-  border-radius: 12px;
-  box-shadow: 0 6px 25px rgba(76, 192, 122, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #4cc07a;
-  position: relative;
-  overflow: hidden;
+  display: none;
 }
 
 .embedded-signup-header::before {
@@ -524,6 +514,102 @@
 /* Smooth scrolling for better UX */
 html {
   scroll-behavior: smooth;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.pagination-button {
+  background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(76, 192, 122, 0.3);
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #43a86a 0%, #3a9660 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 192, 122, 0.4);
+}
+
+.pagination-button:disabled {
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 192, 122, 0.3), 0 4px 12px rgba(76, 192, 122, 0.3);
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pagination-number {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #170b03;
+  border: 2px solid #4cc07a;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 40px;
+  text-align: center;
+}
+
+.pagination-number:hover {
+  background: linear-gradient(135deg, #70da9a 0%, #5fc88a 100%);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(112, 218, 154, 0.3);
+}
+
+.pagination-number.active {
+  background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 192, 122, 0.4);
+  transform: translateY(-1px);
+}
+
+.pagination-number.active:hover {
+  background: linear-gradient(135deg, #43a86a 0%, #3a9660 100%);
+}
+
+.pagination-number:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 192, 122, 0.3);
+}
+
+.pagination-info {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #94d4e4 0%, #bce4ea 100%);
+  border-radius: 12px;
+  color: #170b03;
+  font-weight: 500;
+  border: 1px solid #4cc07a;
+  font-size: 0.9rem;
 }
 
 /* Custom scrollbar */
