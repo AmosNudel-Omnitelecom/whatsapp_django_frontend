@@ -12,6 +12,10 @@ export const phoneNumbersApi = createApi({
       query: () => 'phone_numbers',
       providesTags: ['PhoneNumbers'],
     }),
+    getSinglePhoneNumber: builder.query<any, string>({
+      query: (wabaPhoneNumberId) => `phone_numbers/single/?waba_phone_number_id=${wabaPhoneNumberId}`,
+      providesTags: (result, error, wabaPhoneNumberId) => [{ type: 'PhoneNumbers', id: wabaPhoneNumberId }],
+    }),
     deletePhoneNumber: builder.mutation<void, string>({
       query: (numberId) => ({
         url: `delete-phone-number/${numberId}`,
@@ -45,4 +49,4 @@ export const phoneNumbersApi = createApi({
   }),
 });
 
-export const { useGetPhoneNumbersQuery, useDeletePhoneNumberMutation, useRequestVerificationCodeMutation, useVerifyCodeMutation, useAddPhoneNumberMutation } = phoneNumbersApi; 
+export const { useGetPhoneNumbersQuery, useGetSinglePhoneNumberQuery, useDeletePhoneNumberMutation, useRequestVerificationCodeMutation, useVerifyCodeMutation, useAddPhoneNumberMutation } = phoneNumbersApi; 

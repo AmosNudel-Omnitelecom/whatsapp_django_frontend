@@ -37,7 +37,7 @@ export const wabaApi = createApi({
       query: ({ phoneNumberId, pin }) => ({
         url: `wabas/phone-numbers/register/`,
         method: 'POST',
-        body: { phone_number_id: phoneNumberId, pin },
+        body: { waba_phone_number_id: phoneNumberId, pin },
       }),
       invalidatesTags: (result, error, { phoneNumberId }) => [{ type: 'WABAPhoneNumbers', id: phoneNumberId }],
     }),

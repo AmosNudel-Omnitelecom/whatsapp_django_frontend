@@ -51,6 +51,7 @@ export interface WABAPhoneNumber {
   code_verification_status?: string;
   quality_rating?: string;
   platform_type?: string;
+  status?: string;
   throughput?: {
     level?: string;
   };
