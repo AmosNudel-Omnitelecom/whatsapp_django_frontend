@@ -15,7 +15,7 @@
   align-items: center;
   margin-bottom: 2.5rem;
   padding: 1.5rem 2rem;
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
@@ -32,7 +32,7 @@
 /* Tab Styling */
 .wabas-tabs {
   display: flex;
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 0.5rem;
@@ -78,7 +78,7 @@
 .wabas-section {
   background: #ffffff;
   border: 1px solid #4cc07a;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -102,9 +102,9 @@
 }
 
 .waba-card {
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   border: 1px solid #4cc07a;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1.25rem;
   transition: all 0.3s ease;
   position: relative;
@@ -114,7 +114,7 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   border-color: #70da9a;
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
 }
 
 .waba-info {
@@ -160,7 +160,7 @@
   align-items: center;
   cursor: pointer;
   padding: 0.75rem 1rem;
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   border-radius: 8px;
   border: 1px solid #4cc07a;
   transition: all 0.2s ease;
@@ -241,8 +241,8 @@
 .webhook-component {
   margin: 1rem 0;
   padding: 1rem;
-  background: #94d4e4;
-  border-radius: 8px;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  border-radius: 12px;
   border: 1px solid #4cc07a;
 }
 
@@ -280,7 +280,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -312,7 +312,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -338,8 +338,8 @@
 .pin-input-section {
   margin-top: 0.75rem;
   padding: 1rem;
-  background: #94d4e4;
-  border-radius: 8px;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  border-radius: 12px;
   border: 1px solid #4cc07a;
 }
 
@@ -353,7 +353,7 @@
 .pin-input {
   padding: 0.75rem 1rem;
   border: 1px solid #4cc07a;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   text-align: center;
@@ -380,7 +380,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -408,7 +408,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -450,7 +450,7 @@
   color: #170b03;
   font-size: 1rem;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
 }
@@ -460,7 +460,7 @@
   border: 1px solid #e53935;
   color: #e53935;
   padding: 1.25rem;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -470,7 +470,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -489,7 +489,7 @@
   color: #170b03;
   font-size: 1rem;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
 }

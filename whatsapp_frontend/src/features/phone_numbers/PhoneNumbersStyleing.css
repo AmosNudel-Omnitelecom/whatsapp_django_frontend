@@ -15,11 +15,12 @@
   align-items: center;
   margin-bottom: 2.5rem;
   padding: 1.5rem 2rem;
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
 }
+
 
 .header h2 {
   margin: 0;
@@ -54,7 +55,7 @@
   color: #170b03;
   font-size: 1rem;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
 }
@@ -64,7 +65,7 @@
   border: 1px solid #e53935;
   color: #e53935;
   padding: 1.25rem;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -74,7 +75,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -96,7 +97,7 @@
 .phone-number-card {
   background: #ffffff;
   border: 1px solid #4cc07a;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -172,7 +173,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -199,7 +200,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -224,8 +225,8 @@
 .verification-input-section {
   margin: 1.25rem 0;
   padding: 1.25rem;
-  background: #94d4e4;
-  border-radius: 8px;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  border-radius: 12px;
   border: 1px solid #4cc07a;
 }
 
@@ -239,7 +240,7 @@
   flex: 1;
   padding: 0.75rem 1rem;
   border: 1px solid #4cc07a;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   text-align: center;
@@ -264,7 +265,7 @@
   color: white;
   border: none;
   padding: 0.75rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
@@ -293,7 +294,7 @@
   color: #170b03;
   font-size: 1rem;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
 }
@@ -312,7 +313,7 @@
 .add-phone-form {
   background: white;
   border: 1px solid #4cc07a;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -340,7 +341,7 @@
   width: 100%;
   padding: 12px;
   border: 1px solid #4cc07a;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
@@ -378,7 +379,7 @@
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
@@ -400,7 +401,7 @@
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;

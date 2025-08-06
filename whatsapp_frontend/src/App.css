@@ -7,12 +7,13 @@
 
 /* App Header Styling */
 .app-header {
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid #4cc07a;
   margin-bottom: 2rem;
 }
+
 
 .app-header h1 {
   margin: 0;
@@ -26,7 +27,7 @@
 .app-tabs {
   display: flex;
   justify-content: center;
-  background: #94d4e4;
+  background: linear-gradient(to right, #94d4e4, #bce4ea);
   border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 0.5rem;
