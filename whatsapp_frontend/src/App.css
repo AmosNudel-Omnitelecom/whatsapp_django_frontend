@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 .App {
   text-align: center;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -22,6 +24,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   backdrop-filter: blur(10px);
+  font-family: 'Quicksand', sans-serif;
 }
 
 .app-header::before {
