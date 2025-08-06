@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #fdf6f2;
+  background: linear-gradient(135deg, #fdf6f2 0%, #f8f2ec 100%);
   min-height: 100vh;
 }
 
@@ -15,35 +15,73 @@
   align-items: center;
   margin-bottom: 2.5rem;
   padding: 1.5rem 2rem;
-  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  background: linear-gradient(135deg, #94d4e4 0%, #bce4ea 50%, #a8dce8 100%);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 25px rgba(76, 192, 122, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #4cc07a;
+  position: relative;
+  overflow: hidden;
+}
+
+.embedded-signup-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .embedded-signup-header h2 {
   margin: 0;
   color: #170b03;
   font-size: 1.75rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 3px rgba(23, 11, 3, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .phone-numbers-section {
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   border: 1px solid #4cc07a;
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(76, 192, 122, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-numbers-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4cc07a, #70da9a, #4cc07a);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.phone-numbers-section:hover::before {
+  opacity: 1;
 }
 
 .phone-numbers-section h2 {
   margin: 0 0 1.5rem 0;
   color: #170b03;
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #170b03 0%, #2d1a0a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .phone-numbers-list {
@@ -53,19 +91,36 @@
 }
 
 .phone-number-item {
-  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  background: linear-gradient(135deg, #94d4e4 0%, #bce4ea 50%, #a8dce8 100%);
   border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 1.25rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
+}
+
+.phone-number-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4cc07a, #70da9a, #4cc07a);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.phone-number-item:hover::before {
+  transform: translateX(0);
 }
 
 .phone-number-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(76, 192, 122, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1);
   border-color: #70da9a;
-  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  background: linear-gradient(135deg, #a8dce8 0%, #bce4ea 50%, #94d4e4 100%);
 }
 
 .phone-number-info {
@@ -92,45 +147,113 @@
 }
 
 .select-phone-button {
-  background: #4cc07a;
+  background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(76, 192, 122, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.select-phone-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.select-phone-button:hover::before {
+  left: 100%;
 }
 
 .select-phone-button:hover {
-  background: #43a86a;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #43a86a 0%, #3a9660 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 192, 122, 0.4), 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.select-phone-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 192, 122, 0.3), 0 4px 15px rgba(76, 192, 122, 0.3);
 }
 
 .select-phone-button.selected {
-  background: #70da9a;
+  background: linear-gradient(135deg, #70da9a 0%, #5fc88a 100%);
   color: white;
+  box-shadow: 0 4px 20px rgba(112, 218, 154, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px) scale(1.02);
+  animation: selectedPulse 2s ease-in-out infinite;
+}
+
+@keyframes selectedPulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(112, 218, 154, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(112, 218, 154, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .select-phone-button.selected:hover {
-  background: #5fc88a;
+  background: linear-gradient(135deg, #5fc88a 0%, #4caf50 100%);
+  animation: none;
+  box-shadow: 0 6px 25px rgba(112, 218, 154, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .selected-phone-display {
-  background: #94d4e4;
-  border: 1px solid #4cc07a;
+  background: linear-gradient(135deg, #94d4e4 0%, #bce4ea 50%, #a8dce8 100%);
+  border: 2px solid #4cc07a;
   color: #170b03;
   padding: 1rem;
   border-radius: 12px;
   margin: 1rem 0;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(76, 192, 122, 0.15);
+  position: relative;
+  overflow: hidden;
+  animation: selectedGlow 3s ease-in-out infinite;
+}
+
+@keyframes selectedGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(76, 192, 122, 0.15);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(76, 192, 122, 0.25);
+  }
+}
+
+.selected-phone-display::before {
+  content: '✓';
+  position: absolute;
+  left: 0.5rem;
+  color: #4cc07a;
+  font-weight: bold;
+  font-size: 1.2rem;
+  animation: checkPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.selected-phone-display strong {
+  margin-left: 1.5rem;
 }
 
 .selected-phone-display strong {
@@ -138,25 +261,54 @@
 }
 
 .launch-button {
-  background: #4cc07a;
+  background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(76, 192, 122, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 1.5rem;
   width: 100%;
   max-width: 300px;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.launch-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.8s;
+}
+
+.launch-button:hover::before {
+  left: 100%;
 }
 
 .launch-button:hover:not(:disabled) {
-  background: #43a86a;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #43a86a 0%, #3a9660 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(76, 192, 122, 0.4), 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.launch-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 192, 122, 0.3), 0 6px 20px rgba(76, 192, 122, 0.3);
+}
+
+.launch-button:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s ease;
 }
 
 .launch-button:disabled {
@@ -168,12 +320,42 @@
 }
 
 .response-display {
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   border: 1px solid #4cc07a;
   border-radius: 16px;
   padding: 1.5rem;
   margin-top: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(76, 192, 122, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.response-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4cc07a, #70da9a, #4cc07a);
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .response-display h3 {
@@ -185,10 +367,23 @@
 }
 
 .response-content {
-  background: linear-gradient(to right, #94d4e4, #bce4ea);
+  background: linear-gradient(135deg, #94d4e4 0%, #bce4ea 50%, #a8dce8 100%);
   border: 1px solid #4cc07a;
   border-radius: 12px;
   padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.response-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .response-content strong {
@@ -206,11 +401,14 @@
   color: #170b03;
   white-space: pre-wrap;
   word-break: break-word;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid #4cc07a;
   overflow-x: auto;
+  box-shadow: inset 0 2px 4px rgba(76, 192, 122, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .loading {
@@ -235,21 +433,45 @@
 }
 
 .retry-button {
-  background: #4cc07a;
+  background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 0.75rem;
+  box-shadow: 0 4px 12px rgba(76, 192, 122, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.retry-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.retry-button:hover::before {
+  left: 100%;
 }
 
 .retry-button:hover {
-  background: #43a86a;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #43a86a 0%, #3a9660 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 192, 122, 0.4);
+}
+
+.retry-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 192, 122, 0.3), 0 4px 12px rgba(76, 192, 122, 0.3);
 }
 
 .no-phone-numbers {
