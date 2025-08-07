@@ -6,6 +6,19 @@ import WabasList from './features/wabas/WabasList';
 
 function App() {
   const [activeTab, setActiveTab] = useState<'phone-numbers' | 'embedded-signup' | 'wabas'>('phone-numbers');
+  
+  const tabs = ['phone-numbers', 'embedded-signup', 'wabas'] as const;
+  const currentIndex = tabs.indexOf(activeTab);
+  
+  const navigateLeft = () => {
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+    setActiveTab(tabs[prevIndex]);
+  };
+  
+  const navigateRight = () => {
+    const nextIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+    setActiveTab(tabs[nextIndex]);
+  };
 
   return (
     <div className="App" style={{
@@ -37,6 +50,45 @@ function App() {
           </button>
         </div>
       </div>
+
+      {/* Edge Glow Elements */}
+      <div className="edge-glow edge-glow-left"></div>
+      <div className="edge-glow edge-glow-right"></div>
+
+      {/* Navigation Buttons */}
+      <button 
+        className="nav-button nav-button-left" 
+        onClick={navigateLeft}
+        onMouseEnter={() => {
+          const leftGlow = document.querySelector('.edge-glow-left') as HTMLElement;
+          if (leftGlow) leftGlow.style.opacity = '1';
+        }}
+        onMouseLeave={() => {
+          const leftGlow = document.querySelector('.edge-glow-left') as HTMLElement;
+          if (leftGlow) leftGlow.style.opacity = '0';
+        }}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+      
+      <button 
+        className="nav-button nav-button-right" 
+        onClick={navigateRight}
+        onMouseEnter={() => {
+          const rightGlow = document.querySelector('.edge-glow-right') as HTMLElement;
+          if (rightGlow) rightGlow.style.opacity = '1';
+        }}
+        onMouseLeave={() => {
+          const rightGlow = document.querySelector('.edge-glow-right') as HTMLElement;
+          if (rightGlow) rightGlow.style.opacity = '0';
+        }}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
 
       <div className="app-content">
         {activeTab === 'phone-numbers' && <PhoneNumbers/>}
