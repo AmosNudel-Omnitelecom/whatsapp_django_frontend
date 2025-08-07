@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  useDeletePhoneNumberMutation,
   useRequestVerificationCodeMutation
 } from './phoneNumbersApi';
 import VerificationSection from './VerificationSection';
@@ -17,21 +16,8 @@ interface Props {
 }
 
 const PhoneNumberCard: React.FC<Props> = ({ phoneNumber }) => {
-  const [deletePhoneNumber, { isLoading: isDeleting }] = useDeletePhoneNumberMutation();
   const [requestVerificationCode, { isLoading: isRequestingCode }] = useRequestVerificationCodeMutation();
   const [showVerificationInput, setShowVerificationInput] = useState(false);
-
-  const handleDelete = async () => {
-    if (window.confirm('Are you sure you want to delete this phone number?')) {
-      try {
-        await deletePhoneNumber(phoneNumber.id).unwrap();
-      } catch (error) {
-        console.error('Failed to delete phone number:', error);
-        alert('Failed to delete phone number. Please try again.');
-      }
-    }
-  };
-
   const handleRequestVerificationCode = async () => {
     try {
       await requestVerificationCode(phoneNumber.id).unwrap();
@@ -70,13 +56,6 @@ const PhoneNumberCard: React.FC<Props> = ({ phoneNumber }) => {
           disabled={isRequestingCode}
         >
           {isRequestingCode ? 'Requesting...' : 'Request Code'}
-        </button>
-        <button
-          className="delete-button"
-          onClick={handleDelete}
-          disabled={isDeleting}
-        >
-          {isDeleting ? 'Deleting...' : 'Delete'}
         </button>
       </div>
     </div>

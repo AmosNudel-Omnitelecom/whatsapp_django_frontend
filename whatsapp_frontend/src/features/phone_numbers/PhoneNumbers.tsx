@@ -47,7 +47,12 @@ const PhoneNumbers: React.FC = () => {
   }
 
   return (
-    <div className="phone-numbers-container">
+    <div className="phone-numbers-container" style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL}/memphis-mini.png)`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: '200px 200px',
+      backgroundBlendMode: 'overlay'
+    }}>
       <AddPhoneNumber />
       {data?.data && data.data.length > 0 ? (
         <>

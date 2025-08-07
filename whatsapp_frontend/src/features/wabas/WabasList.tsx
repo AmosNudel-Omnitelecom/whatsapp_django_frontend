@@ -7,7 +7,12 @@ function WabasList() {
   const [activeTab, setActiveTab] = useState<'portfolio' | 'client'>('portfolio');
 
   return (
-    <div className="wabas-container">
+    <div className="wabas-container" style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL}/memphis-mini.png)`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: '200px 200px',
+      backgroundBlendMode: 'overlay'
+    }}>
         <div className="wabas-header">
         </div>
         

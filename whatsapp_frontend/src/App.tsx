@@ -8,7 +8,12 @@ function App() {
   const [activeTab, setActiveTab] = useState<'phone-numbers' | 'embedded-signup' | 'wabas'>('phone-numbers');
 
   return (
-    <div className="App">
+    <div className="App" style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL}/memphis-mini.png)`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: '200px 200px',
+      backgroundBlendMode: 'overlay'
+    }}>
       <div className="app-header">
         <h1>WhatsApp Business API Dashboard</h1>
         <div className="app-tabs">

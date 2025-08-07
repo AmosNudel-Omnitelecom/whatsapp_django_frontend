@@ -201,7 +201,7 @@
   gap: 0.75rem;
 }
 
-.delete-button {
+/* .delete-button {
   background: linear-gradient(135deg, #e53935 0%, #d32f2f 100%);
   color: white;
   border: none;
@@ -248,7 +248,7 @@
   opacity: 0.6;
   transform: none;
   box-shadow: none;
-}
+} */
 
 .request-code-button {
   background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);

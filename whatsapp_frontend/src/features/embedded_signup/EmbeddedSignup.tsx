@@ -149,7 +149,12 @@ function EmbeddedSignup() {
   }, [appId]);
 
   return (
-    <div className="embedded-signup-container">
+    <div className="embedded-signup-container" style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL}/memphis-mini.png)`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: '200px 200px',
+      backgroundBlendMode: 'overlay'
+    }}>
       <div className="embedded-signup-header">
       </div>
       
