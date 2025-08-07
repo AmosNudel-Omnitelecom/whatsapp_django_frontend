@@ -4,9 +4,11 @@ import './EmbeddedSignupStyling.css';
 
 interface EmbeddedSignupNumbersListProps {
   onPhoneNumberSelect: (id: string) => void;
+  onLaunchSignup: (id: string) => void;
+  onCancelSelection: () => void;
 }
 
-function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumbersListProps) {
+function EmbeddedSignupNumbersList({ onPhoneNumberSelect, onLaunchSignup, onCancelSelection }: EmbeddedSignupNumbersListProps) {
     const { data, error, isLoading, refetch } = useGetPhoneNumbersQuery();
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
@@ -32,9 +34,21 @@ function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumber
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const [selectedPhoneNumberId, setSelectedPhoneNumberId] = useState<string>('');
+
     const handleSelectPhoneNumber = (id: string) => {
         console.log('Selected phone number ID:', id);
+        setSelectedPhoneNumberId(id);
         onPhoneNumberSelect(id);
+    }
+
+    const handleLaunchSignup = (id: string) => {
+        onLaunchSignup(id);
+    }
+
+    const handleCancelSelection = () => {
+        setSelectedPhoneNumberId('');
+        onCancelSelection();
     }
 
     // Early returns after all hooks are called
@@ -80,12 +94,30 @@ function EmbeddedSignupNumbersList({ onPhoneNumberSelect }: EmbeddedSignupNumber
                         <p><strong>Phone Number:</strong> {phoneNumber.phone_number}</p>
                         <div className="phone-number-id">ID: {phoneNumber.id}</div>
                     </div>
-                    <button 
-                        onClick={() => handleSelectPhoneNumber(phoneNumber.id)}
-                        className="select-phone-button"
-                    >
-                        Select Phone Number
-                    </button>
+                    
+                    {selectedPhoneNumberId === phoneNumber.id ? (
+                        <div className="embedded-signup-actions">
+                            <button 
+                                onClick={() => handleLaunchSignup(phoneNumber.id)}
+                                className="launch-button-card"
+                            >
+                                Login with Facebook
+                            </button>
+                            <button 
+                                onClick={handleCancelSelection}
+                                className="cancel-button-card"
+                            >
+                                Cancel
+                            </button>
+                        </div>
+                    ) : (
+                        <button 
+                            onClick={() => handleSelectPhoneNumber(phoneNumber.id)}
+                            className="select-phone-button"
+                        >
+                            Select Phone Number
+                        </button>
+                    )}
                 </div>
             ))}
         </div>

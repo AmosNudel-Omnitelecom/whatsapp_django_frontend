@@ -51,7 +51,8 @@ function EmbeddedSignup() {
   };
 
   // Launch method and callback registration
-  const launchWhatsAppSignup = () => {
+  const launchWhatsAppSignup = (phoneNumberId?: string) => {
+    const idToUse = phoneNumberId || selectedPhoneNumberId;
     try {
       // Check if environment variables are set
       if (!appId) {
@@ -65,7 +66,7 @@ function EmbeddedSignup() {
       }
 
       // Check if a phone number is selected
-      if (!selectedPhoneNumberId) {
+      if (!idToUse) {
         displayResponse('Error', { message: 'Please select a phone number before launching signup' });
         return;
       }
@@ -76,7 +77,8 @@ function EmbeddedSignup() {
         return;
       }
       
-      (window as any).FB.login(fbLoginCallback, {
+      // Prepare the request structure
+      const fbLoginRequest = {
         config_id: configId,
         response_type: 'code',
         override_default_response_type: true,
@@ -84,13 +86,24 @@ function EmbeddedSignup() {
           feature: 'whatsapp_embedded_signup',
           setup: {
             preVerifiedPhone: {
-              ids: [selectedPhoneNumberId]
+              ids: [idToUse]
             }
           },
           featureType: '',
           sessionInfoVersion: '3',
         }
-      });
+      };
+
+      // Console log the complete request structure
+      console.log('=== FB.login Request Structure ===');
+      console.log('Full Request Object:', fbLoginRequest);
+      console.log('Config ID:', configId);
+      console.log('App ID:', appId);
+      console.log('Selected Phone Number ID:', idToUse);
+      console.log('Request Structure (formatted):', JSON.stringify(fbLoginRequest, null, 2));
+      console.log('===================================');
+      
+      (window as any).FB.login(fbLoginCallback, fbLoginRequest);
     } catch (error: any) {
       console.error('Error launching WhatsApp signup:', error);
       displayResponse('Error Launching Signup', {
@@ -148,6 +161,10 @@ function EmbeddedSignup() {
     };
   }, [appId]);
 
+  const clearPhoneNumberSelection = () => {
+    setSelectedPhoneNumberId('');
+  };
+
   return (
     <div className="embedded-signup-container" style={{
       backgroundImage: `url(${process.env.PUBLIC_URL}/memphis-mini.png)`,
@@ -158,23 +175,11 @@ function EmbeddedSignup() {
       <div className="embedded-signup-header">
       </div>
       
-      <EmbeddedSignupNumbersList onPhoneNumberSelect={handlePhoneNumberSelect} />
-
-      {/* Selected phone number display */}
-      {selectedPhoneNumberId && (
-        <div className="selected-phone-display">
-          <strong>Selected Phone Number ID:</strong> {selectedPhoneNumberId}
-        </div>
-      )}
-
-      {/* Launch button */}
-      <button 
-        onClick={launchWhatsAppSignup} 
-        className="launch-button"
-        disabled={!selectedPhoneNumberId}
-      >
-        Login with Facebook
-      </button>
+      <EmbeddedSignupNumbersList 
+        onPhoneNumberSelect={handlePhoneNumberSelect}
+        onLaunchSignup={launchWhatsAppSignup}
+        onCancelSelection={clearPhoneNumberSelection}
+      />
       
       {/* Response Display */}
       {showResponse && (

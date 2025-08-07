@@ -309,6 +309,53 @@
   box-shadow: none;
 }
 
+/* Embedded signup actions in cards */
+.embedded-signup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.launch-button-card {
+  background: linear-gradient(135deg, #4cc07a 0%, #43a86a 100%);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(76, 192, 122, 0.3);
+}
+
+.launch-button-card:hover {
+  background: linear-gradient(135deg, #43a86a 0%, #3a9660 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(76, 192, 122, 0.4);
+}
+
+.cancel-button-card {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+}
+
+.cancel-button-card:hover {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(245, 101, 101, 0.4);
+}
+
 .response-display {
   background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   border: 1px solid #4cc07a;
